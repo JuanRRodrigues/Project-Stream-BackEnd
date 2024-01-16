@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}"
+>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link th:href="@{users/style.css}" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+
+    <div layout:fragment="content">
+        <header>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <h1>STREAM-PROJECT</h1>
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">TV Shows</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Movies</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Animes</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Lastest</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">My List</a></li>
+                </ul>
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <i class="icon-search"></i>
+                </div>
+                <img class="menuImage" src="/img/Login.png" alt="login">
+
+
+            </nav>
+        </header>
+
+    <main>
+        <h1>List of <strong>Medias</strong></h1>
+        <a href="/movies/form">New</a>
+        <table>
+            <thead>
+            <tr>
+                <th>Poster</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Box Officer</th>
+                <th>Release Year</th>
+                <th>Description</th>
+                <th>Rated</th>
+                <th>Release Date</th>
+                <th>Runtime</th>
+                <th>Genre</th>
+                <th>Director</th>
+                <th>Actors</th>
+                <th>Language</th>
+                <th>Country</th>
+                <th>Awards</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="movie : ${listMovie}">
+                <td><img th:src="${movie.poster}" alt="Movie Poster" style="max-width: 100px; max-height: 150px;"></td>
+                <td th:text="${movie.title}"></td>
+                <td th:text="${movie.type}"></td>
+                <td th:text="${movie.boxOffice}"></td>
+                <td th:text="${movie.releaseYear}"></td>
+                <td th:text="${movie.description}"></td>
+                <td th:text="${movie.rated}"></td>
+                <td th:text="${movie.releaseDate}"></td>
+                <td th:text="${movie.runtime}"></td>
+                <td th:text="${movie.genre}"></td>
+                <td th:text="${movie.director}"></td>
+                <td th:text="${movie.actores}"></td>
+                <td th:text="${movie.language}"></td>
+                <td th:text="${movie.country}"></td>
+                <td th:text="${movie.awards}"></td>
+                <td>
+                    <a th:href="@{/movies/editFormMovie?id={id}(id=${movie.id})}">Edit</a>
+
+                    <form action="/movies" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="type" th:value="${movie.type}">
+                        <input type="hidden" name="id" th:value="${movie.id}">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Poster</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Release Year</th>
+                <th>Description</th>
+                <th>Rated</th>
+                <th>Release Date</th>
+                <th>Runtime</th>
+                <th>Genre</th>
+                <th>Actors</th>
+                <th>Language</th>
+                <th>Country</th>
+                <th>Awards</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="serie : ${listSerie}">
+                <td><img th:src="${serie.poster}" alt="Media Poster" style="max-width: 100px; max-height: 150px;"></td>
+                <td th:text="${serie.title}"></td>
+                <td th:text="${serie.type}"></td>
+                <td th:text="${serie.releaseYear}"></td>
+                <td th:text="${serie.description}"></td>
+                <td th:text="${serie.rated}"></td>
+                <td th:text="${serie.releaseDate}"></td>
+                <td th:text="${serie.runtime}"></td>
+                <td th:text="${serie.genre}"></td>
+                <td th:text="${serie.actores}"></td>
+                <td th:text="${serie.language}"></td>
+                <td th:text="${serie.country}"></td>
+                <td th:text="${serie.awards}"></td>
+                <td>
+                    <a th:href="@{/movies/editFormSerie?id={id}(id=${serie.id})}">Edit</a>
+
+                    <form action="/movies" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="type" th:value="${serie.type}">
+                        <input type="hidden" name="id" th:value="${serie.id}">
+
+                        <input type="submit" value="Delete">
+                    </form>
+                    <a th:href="@{/movies/seasonList?id={id}(id=${serie.id})}">View</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+   <footer></footer>
+</div>
+
+</body>
+</html>

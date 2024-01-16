@@ -1,0 +1,110 @@
+.mainBanner .watch-Now {
+    right: 1515px;
+    top: 100px;
+    width: 152.39px;
+    height: 27px;
+    flex-shrink: 0;
+    position: relative;
+    border: 1px solid #FFF;
+    background: #dbcfcd;
+    color: #000;
+    text-align: center;
+    font-family: Lateef;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.16px;
+}
+
+.mainBanner .watch-Now:hover{
+    background: red;
+}
+
+.hambuguer {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 20px;
+    /* Corrigido: ajustado o tamanho para 20px */
+    height: 2px;
+    /* Corrigido: ajustado a altura para 2px */
+    border-radius: 1px;
+    /* Corrigido: ajustado o raio para 1px */
+    margin: 5px auto;
+    background-color: aliceblue;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.mainBanner h1 {
+
+    width: 353px;
+    height: 290px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: Koulen;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.24px;
+}
+
+
+.mainBanner img {
+    width: 1248px;
+    display: flex;
+    height: 387px;
+    align-items: center;
+    flex-shrink: 0;
+
+}
+
+.mainBanner {
+    position: relative;
+    width: 1024px;
+    display: flex;
+    height: 260px;
+    flex-direction: row;
+}
+
+
+.mainBanner__conteudo {
+
+    width: 283px;
+    position: absolute;
+    top: 69%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Arial;
+    right: 10;
+    color: #FFF;
+    letter-spacing: 1.08px;
+    height: 100%;
+
+}
+
+main .mainBanner__conteudo p {
+
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 1.08px;
+    text-align: center;
+}
+
+main {
+    height: 80%;
+    align-items: center;
+    flex-direction: row;
+    margin: 10%;
+}

@@ -1,0 +1,173 @@
+#carrosel {
+    display: flex;
+    height: 40%;
+    width: 100%;
+
+    /* Alterado para uma disposição horizontal dos filmes */
+}
+
+.swiper-wrapper{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-slide {
+    width: 241px;
+    height: 342px;
+    display: flex;
+    flex-direction: column;
+    /* Alinhar a imagem e o texto verticalmente */
+
+    align-items: center;
+    /* Centralizar o conteúdo em cada filme *
+    /* Espaçamento entre os filmes */
+
+
+
+
+}
+
+
+.swiper-slide img {
+    width: 241px;
+    height: 342px;
+    align-items: center;
+    flex-shrink: 0;
+    border: 2px solid #FFF;
+    margin-top: 20%;
+    transition: filter 0.3s ease; /* Adicionado a transição para o efeito de hover */
+}
+
+
+#sua-section {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-direction: column;
+}
+
+#sua-section h2 {
+    width: 262px;
+    height: 59px;
+    flex-shrink: 0;
+    color: #FFF;
+
+    text-align: center;
+    font-family: Koulen;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.24px;
+
+}
+
+#sua-section P {
+    width: 207px;
+    height: 27px;
+    flex-shrink: 0;
+    color: #FFF;
+
+    text-align: center;
+    font-family: Koulen;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.44px;
+
+    /* main banner */
+}
+
+.bar {
+    display: block;
+    width: 20px;
+    /* Corrigido: ajustado o tamanho para 20px */
+    height: 2px;
+    /* Corrigido: ajustado a altura para 2px */
+    border-radius: 1px;
+    /* Corrigido: ajustado o raio para 1px */
+    margin: 5px auto;
+    background-color: aliceblue;
+    transition: all 0.3s ease-in-out;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    height: 435px;
+    flex-shrink: 0;
+    padding-left: 3%;
+    margin-top: 1%;
+}
+
+.swiper-slide .description {
+    position: absolute;
+    width: 230px;
+
+    height: auto; /* Defina 'auto' para permitir altura dinâmica baseada no conteúdo */
+    flex-shrink: 0;
+    top: 50%;
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    transition: opacity 0.3s ease;
+    font-family: Koulen;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5; /* Altura de cada linha */
+    letter-spacing: 1.08px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Número máximo de linhas que você deseja mostrar */
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Permite quebras de linha */
+
+}
+
+.swiper-slide .title {
+    margin-top: 2%;
+    text-align: center;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Koulen;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.35px;
+}
+
+
+.swiper-slide:hover .description {
+    opacity: 1;
+    color: #FFF;
+
+}
+
+
+.swiper-slide:hover .poster {
+    filter: brightness(15%);
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+    display: none;
+}
+
+.swiper-pagination{
+    position:initial;
+    border-radius: 10%;
+    background-color: none;
+    width: 30px;
+
+}
+
+
+
+
+
+

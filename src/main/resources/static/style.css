@@ -1,0 +1,37 @@
+@import url("styles/header.css");
+@import url("styles/mainBanner.css");
+@import url("styles/sectionMedia.css");
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url("styles/carrosel.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Koulen' sans-serif;
+}
+
+
+body {
+    background-color: #000000;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: #F6F6F6;
+}
+
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #FFF;
+    text-align: center;
+    font-family: Koulen;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.35px;
+    text-decoration: none;
+}

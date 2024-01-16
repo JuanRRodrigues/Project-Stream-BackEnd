@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}"
+>
+<link th:href="@{/css/form.css}" rel="stylesheet"   />
+<head>
+    <title>Edite Media</title>
+</head>
+<body>
+    <div layout:fragment="content">
+
+        <h1>Register Media</h1>
+        <form method="post" action="/movies">
+
+            <input type="hidden" name="_method" value="put" th:if="${movie != null}">
+            <input type="hidden" name="id" th:value="${movie?.id}">
+
+            <div>
+                <label for="title">Title:</label>
+                <input id="title" name="title" th:value="${movie?.title}">
+            </div>
+
+            <div>
+                <label for="releaseYear">Release Year:</label>
+                <input id="releaseYear" name="releaseYear" th:value="${movie?.releaseYear}">
+            </div>
+
+            <div>
+                <label for="type">Type:</label>
+                <input id="type" name="type" th:value="${movie?.type}">
+            </div>
+
+            <div>
+                <label for="boxOffice">Box Office:</label>
+                <input id="boxOffice" name="boxOffice" th:value="${movie?.boxOffice}">
+            </div>
+
+            <div>
+                <label for="poster">Poster URL:</label>
+                <input id="poster" name="poster" th:value="${movie?.poster}">
+            </div>
+
+            <div>
+                <label for="description">Description:</label>
+                <input id="description" name="description" th:value="${movie?.description}">
+            </div>
+
+            <div>
+                <label for="rated">Rated:</label>
+                <input id="rated" name="rated" th:value="${movie?.rated}">
+            </div>
+
+            <div>
+                <label for="releaseDate">Release Date:</label>
+                <input id="releaseDate" name="releaseDate" th:value="${movie?.releaseDate}">
+            </div>
+
+            <div>
+                <label for="runtime">Runtime:</label>
+                <input id="runtime" name="runtime" th:value="${movie?.runtime}">
+            </div>
+
+            <div>
+                <label for="genre">Genre:</label>
+                <input id="genre" name="genre" th:value="${movie?.genre}">
+            </div>
+
+            <div>
+                <label for="director">Director:</label>
+                <input id="director" name="director" th:value="${movie?.director}">
+            </div>
+
+            <div>
+                <label for="actores">Actors:</label>
+                <input id="actores" name="actores" th:value="${movie?.actores}">
+            </div>
+
+            <div>
+                <label for="language">Language:</label>
+                <input id="language" name="language" th:value="${movie?.language}">
+            </div>
+
+            <div>
+                <label for="country">Country:</label>
+                <input id="country" name="country" th:value="${movie?.country}">
+            </div>
+
+            <div>
+                <label for="awards">Awards:</label>
+                <input id="awards" name="awards" th:value="${movie?.awards}">
+            </div>
+
+            <div>
+                <label for="production">Production:</label>
+                <input id="production" name="production" th:value="${movie?.production}">
+            </div>
+
+            <input type="submit" value="Register">
+        </form>
+        <!-- Confirmation message -->
+<style>
+    :root {
+        --primary-color: #3498db;
+        --background-color: #f5f5f5;
+        --text-color: #333;
+        --form-background: #fff;
+        --form-border: #ddd;
+        --form-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 2em;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    form {
+        background-color: var(--form-background);
+        border: 1px solid var(--form-border);
+        box-shadow: var(--form-shadow);
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    label {
+        font-size: 18px;
+        color: var(--text-color);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="submit"] {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid var(--form-border);
+        border-radius: 3px;
+    }
+
+    textarea {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid var(--form-border);
+        border-radius: 3px;
+    }
+
+    input[type="submit"] {
+        background-color: var(--primary-color);
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+</style>
+    </div>
+</body>
+</html>
