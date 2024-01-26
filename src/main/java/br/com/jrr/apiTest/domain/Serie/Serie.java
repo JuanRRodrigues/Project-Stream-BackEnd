@@ -37,6 +37,7 @@ public class Serie extends Media {
 
 
     public void serieEditData(MediaEditData data) {
+
         super.mediaEditData(data);
     }
 

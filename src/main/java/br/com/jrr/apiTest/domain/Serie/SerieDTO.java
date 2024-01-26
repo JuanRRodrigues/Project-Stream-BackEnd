@@ -1,5 +1,6 @@
 package br.com.jrr.apiTest.domain.Serie;
 
+import br.com.jrr.apiTest.domain.Season.Season;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

@@ -1,8 +1,6 @@
 package br.com.jrr.apiTest.service;
 
-import br.com.jrr.apiTest.Repository.EpisodeRepository;
-import br.com.jrr.apiTest.Repository.SeasonRepository;
-import br.com.jrr.apiTest.Repository.SerieRepository;
+import br.com.jrr.apiTest.Repository.*;
 import br.com.jrr.apiTest.domain.API.DataMediaAPI;
 import br.com.jrr.apiTest.domain.API.DataMediaRegistrationAPI;
 import br.com.jrr.apiTest.domain.Enums.Category;
@@ -10,22 +8,25 @@ import br.com.jrr.apiTest.domain.Episode.DataEpisode;
 import br.com.jrr.apiTest.domain.Episode.Episode;
 import br.com.jrr.apiTest.domain.Media.Media;
 import br.com.jrr.apiTest.domain.Movie.Movie;
+import br.com.jrr.apiTest.domain.Movie.MovieDTO;
 import br.com.jrr.apiTest.domain.Season.DataSeason;
 import br.com.jrr.apiTest.domain.Season.Season;
 import br.com.jrr.apiTest.domain.Serie.Serie;
 import br.com.jrr.apiTest.domain.Serie.SerieDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 
 @Service
-public class SerieService {
+public class ApiService {
 
-
-
+    @Autowired
+    private MovieRepository movieRepository;
     @Autowired
     private SeasonRepository seasonRepository;
     @Autowired
@@ -38,55 +39,6 @@ public class SerieService {
     private final String LINK = "https://www.omdbapi.com/?t=";
     private final String API_KEY = "&apikey=37a01a66";
 
-
-    public List<SerieDTO> getSeries() {
-        return serieRepository.findAll()
-                .stream()
-                .map(s -> new SerieDTO(
-                        s.getId(),
-                        s.getTitle(),
-                        s.getReleaseYear(),
-                        s.getType(),
-                        s.getPoster(),
-                        s.getTotalSeasons(),
-                        s.getRated(),
-                        s.getReleaseDate(),
-                        s.getRuntime(),
-                        s.getGenre(),
-                        s.getDescription(),
-                        s.getLanguage(),
-                        s.getCountry(),
-                        s.getAwards()
-                        ))
-                .collect(Collectors.toList())
-                ;
-
-    }
-
-    public SerieDTO getById(UUID id) {
-        Optional<Serie> serie = serieRepository.findById(id);
-        if (serie.isPresent()) {
-            Serie s = serie.get();
-            return new SerieDTO(
-                    s.getId(),
-                    s.getTitle(),
-                    s.getReleaseYear(),
-                    s.getType(),
-                    s.getPoster(),
-                    s.getTotalSeasons(),
-                    s.getRated(),
-                    s.getReleaseDate(),
-                    s.getRuntime(),
-                    s.getGenre(),
-                    s.getDescription(),
-                    s.getLanguage(),
-                    s.getCountry(),
-                    s.getAwards()
-                    );
-        }
-        return null;
-    }
-
     public SerieDTO registerByAPI(DataMediaRegistrationAPI data) {
 
         String mediaTitle = data.title();
@@ -94,10 +46,10 @@ public class SerieService {
         System.out.println(mediaTitle + mediaType);
 
         if (mediaTitle != null) {
-            var json = get.obterDados(LINK + mediaTitle.replace(" ", "+") + API_KEY);
-            DataMediaAPI dataMediaAPI = convert.getDate(json, DataMediaAPI.class);
+                var json = get.obterDados(LINK + mediaTitle.replace(" ", "+") + API_KEY);
+                DataMediaAPI dataMediaAPI = convert.getDate(json, DataMediaAPI.class);
 
-            var media = new Media(dataMediaAPI);
+                var media = new Media(dataMediaAPI);
 
             if (mediaType == Category.Series && Objects.equals(media.getType(), "series")) {
                 // Se for uma série, crie e salve uma instância de Serie
@@ -141,11 +93,20 @@ public class SerieService {
                         savedSerie.getLanguage(),
                         savedSerie.getCountry(),
                         savedSerie.getAwards()
+
                         );
             }
         }
         return null;
     }
 
+    }
 
-}
+
+
+
+
+
+
+
+
