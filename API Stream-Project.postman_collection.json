@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "f66f6a30-0572-4fb3-b4bf-f81f8b4951da",
+		"name": "API Stream-Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29636611"
+	},
+	"item": [
+		{
+			"name": "Serie",
+			"item": [
+				{
+					"name": "DetailSerie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/series/0343ecff-bbbc-4f88-9b33-f1cfbf0e94f7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"series",
+								"0343ecff-bbbc-4f88-9b33-f1cfbf0e94f7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DetailSerie Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/series/0343ecff-bbbc-4f88-9b33-f1cfbf0e94f7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"series",
+								"0343ecff-bbbc-4f88-9b33-f1cfbf0e94f7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SerieList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/series/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"series",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "DetailMovie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movies/0f2f5af2-8795-4517-b386-e1711478586c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								"0f2f5af2-8795-4517-b386-e1711478586c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MovieList",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"title\": \"Breaking Bad\",\r\n\"category\": \"Series\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/series/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"series",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"0343ecff-bbbc-4f88-9b33-f1cfbf0e94f7\",\r\n  \"title\": \"Jua\",\r\n  \"releaseYear\": \"2008\",\r\n  \"type\": \"TV Series\",\r\n  \"poster\": \"https://i.pinimg.com/736x/89/b5/96/89b5968e06b642592e3855470f36627e.jpg\",\r\n  \"totalSeasons\": 5,\r\n  \"rated\": \"TV-MA\",\r\n  \"releaseDate\": \"2008-01-20\",\r\n  \"runtime\": \"49 min per episode\",\r\n  \"genre\": \"Crime, Drama, Thriller\",\r\n  \"description\": \"A high school chemistry teacher turned methamphetamine manufacturer partners with a former student.\",\r\n  \"language\": \"English\",\r\n  \"country\": \"United States\",\r\n  \"awards\": \"16 Primetime Emmy Awards\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/series/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"series",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
