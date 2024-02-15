@@ -45,7 +45,7 @@ private MovieService service;
         return service.registerByAPI(data);
     }
 
-    @PutMapping("/edit")
+    @PutMapping("/edit/{id}")
     public MovieDTO EditSerie(@RequestBody @Valid MediaEditData data){
         var movie = movieRepository.getReferenceById(data.id());
         movie.movieEditData(data);
@@ -53,7 +53,7 @@ private MovieService service;
         return service.getById(data.id());
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     @Transactional
     public MovieDTO delete(@PathVariable UUID id){
         movieRepository.deleteById(id);

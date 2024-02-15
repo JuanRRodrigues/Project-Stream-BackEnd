@@ -4,6 +4,7 @@ package br.com.jrr.apiTest.domain.Media;
 import br.com.jrr.apiTest.domain.Enums.Category;
 import br.com.jrr.apiTest.domain.API.DataMediaAPI;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
 import java.util.UUID;
@@ -20,6 +21,7 @@ public class Media {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @NotNull
     private String title;
     private Category category;
     private String type;
@@ -60,14 +62,6 @@ public class Media {
 
 
 
-    @Override
-    public String toString() {
-        return "Media{" +
-                "title='" + title + '\'' +
-                ", releaseYear=" + releaseYear +
-                ", description='" + description + '\'' +
-                '}';
-    }
   public void mediaEditData(MediaEditData data) {
       this.title = data.title();
       this.releaseYear = data.releaseYear();
@@ -85,5 +79,25 @@ public class Media {
       this.production = data.production();
   }
 
-
+    @Override
+    public String toString() {
+        return "Media{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", category=" + category +
+                ", type='" + type + '\'' +
+                ", releaseYear='" + releaseYear + '\'' +
+                ", description='" + description + '\'' +
+                ", rated='" + rated + '\'' +
+                ", releaseDate='" + releaseDate + '\'' +
+                ", runtime='" + runtime + '\'' +
+                ", genre='" + genre + '\'' +
+                ", actores='" + actores + '\'' +
+                ", poster='" + poster + '\'' +
+                ", language='" + language + '\'' +
+                ", country='" + country + '\'' +
+                ", awards='" + awards + '\'' +
+                ", production='" + production + '\'' +
+                '}';
+    }
 }

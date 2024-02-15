@@ -4,10 +4,11 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.validation.constraints.NotNull;
 
 
 public record MovieDTO(UUID id,
-                       String title,
+                      String title,
                        String releaseYear,
                        String type,
                        String poster,
