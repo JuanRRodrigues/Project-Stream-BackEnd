@@ -56,13 +56,13 @@ public class ApiService {
                 var serie = new Serie(dataMediaAPI);
                 Serie savedSerie= serieRepository.save(serie);
 
+
                 // Adicione temporadas e episódios conforme necessário
                 List<DataSeason> seasons = new ArrayList<>();
                 for (int i = 1; i <= dataMediaAPI.totalSeasons(); i++) {
                     json = get.obterDados(LINK + mediaTitle.replace(" ", "+") + "&season=" + i + API_KEY);
                     DataSeason dataSeason = convert.getDate(json, DataSeason.class);
-                    seasons.add(dataSeason);
-
+                    System.out.println(dataSeason);
                     // Criar e salvar a temporada
                     var season = new Season(serie, dataSeason);
                     seasonRepository.save(season);
@@ -93,7 +93,6 @@ public class ApiService {
                         savedSerie.getLanguage(),
                         savedSerie.getCountry(),
                         savedSerie.getAwards()
-
                         );
             }
         }
