@@ -31,7 +31,7 @@ public class MovieControllerTest {
     @Mock
     private MovieRepository movieRepository;
     @Test
-    void ShouldReturn400CodeForAdoptionRequestWithErrors() throws Exception {
+    void ShouldReturn400CodeForMovienRequestWithErrors() throws Exception {
         //ARRANGE
         String json = "{23}";
         //ACT
@@ -46,7 +46,7 @@ public class MovieControllerTest {
     }
 
     @Test
-    void ShouldReturn200CodeForAdoptionRequestWithErrors() throws Exception {
+    void ShouldReturn200CodeForMovieRequestWithErrors() throws Exception {
         //ARRANGE
         String json = """
                     {
@@ -78,7 +78,7 @@ public class MovieControllerTest {
     }
 
     @Test
-    void shouldReturn400StatusCodeParaRequestToListMoviesById() throws Exception {
+    void shouldReturn400StatusCodeToRequestToListMoviesById() throws Exception {
         //ARRANGE
         UUID id = UUID.fromString("0f3f5af8-8795-4517-b386-e1711478586c");
         //ACT
