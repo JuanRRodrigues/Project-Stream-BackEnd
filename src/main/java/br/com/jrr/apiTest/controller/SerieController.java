@@ -57,7 +57,7 @@ private SerieService service;
         return service.getById(data.id());
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     @Transactional
     public SerieDTO delete(@PathVariable UUID id){
         serieRepository.deleteById(id);
