@@ -2,6 +2,7 @@ package br.com.jrr.apiTest.domain.Season;
 
 import br.com.jrr.apiTest.domain.Serie.Serie;
 import br.com.jrr.apiTest.domain.Episode.Episode;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
