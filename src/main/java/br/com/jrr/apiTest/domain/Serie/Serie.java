@@ -5,6 +5,7 @@ import br.com.jrr.apiTest.domain.Media.Media;
 import br.com.jrr.apiTest.domain.API.DataMediaAPI;
 import br.com.jrr.apiTest.domain.Media.MediaEditData;
 import br.com.jrr.apiTest.domain.Season.Season;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 
