@@ -4,6 +4,7 @@ import br.com.jrr.apiTest.domain.Season.Season;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -22,6 +23,7 @@ public record SerieDTO(UUID id,
                        String language,
                        String country ,
                        String awards
+
 
                   ){
                      //   @JsonAlias("Website")String website){
